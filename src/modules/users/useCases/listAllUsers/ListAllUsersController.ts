@@ -14,7 +14,9 @@ class ListAllUsersController {
       });
       return response.status(202).json(user);
     } catch {
-      return response.status(400).json({ error: "Error" });
+      return response
+        .status(400)
+        .json({ error: "Only admin can list all users" });
     }
   }
 }
